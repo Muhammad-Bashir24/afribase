@@ -1,9 +1,13 @@
+import 'package:afribase_app/config/afribase/afribase_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/di/injection_container.dart' as di;
 import 'config/router/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  await AfribaseService.init();
   await di.init();
   runApp(const MyApp());
 }

@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import '../models/user_model.dart';
-import '../../../../core/error/failures.dart';
 
 abstract class AuthRemoteDataSource {
   Future<UserModel> login(String email, String password);
@@ -18,7 +17,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       // Simulate network request
       await Future.delayed(const Duration(seconds: 2));
       if (email == 'test@test.com' && password == 'password') {
-        return const UserModel(id: '1', email: 'test@test.com', name: 'Test User');
+        return const UserModel(
+          id: '1',
+          email: 'test@test.com',
+          name: 'Test User',
+        );
       } else {
         throw ServerException();
       }
