@@ -41,6 +41,7 @@ dependencies:
   dio: ^5.11.1
   flutter_dotenv: ^6.0.1
   afribase: ^0.3.0
+  flutter_animate: ^4.5.2
 
 dev_dependencies:
   flutter_test:

@@ -13,7 +13,16 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = await remoteDataSource.login(email, password);
       return user;
     } catch (e) {
-      // In a real app, map exceptions to failures
+      rethrow;
+    }
+  }
+
+  @override
+  Future<User> signUp(String email, String password) async {
+    try {
+      final user = await remoteDataSource.signUp(email, password);
+      return user;
+    } catch (e) {
       rethrow;
     }
   }
